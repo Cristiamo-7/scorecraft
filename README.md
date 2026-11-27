@@ -6,6 +6,8 @@
 
 ![style](https://img.shields.io/badge/format-single--file%20HTML-informational) ![offline](https://img.shields.io/badge/offline-yes-success) ![fonts](https://img.shields.io/badge/fonts-SIL%20OFL%201.1-blue)
 
+![动态谱预览](docs/preview.png)
+
 ## 它长什么样
 
 - **左侧音级轴**：do/re/mi 圆角卡片，当前音放大发光
@@ -14,6 +16,8 @@
 - **逐字歌词**：贴在各自音块正下方，唱到哪个字哪个字放大变色
 - **简谱同步面板**：小节线、成组减时线、高低音点、一字多音连音弧，当前音实时标红
 - **课堂功能**：前奏倒计时、选段循环、慢练倍速、同步微调、翻句
+
+![音符在音块之间跳跃](docs/jump.gif)
 
 ## 安装
 
@@ -61,6 +65,7 @@ python3 ~/.workbuddy/skills/scorecraft/scripts/check_layout.py index.html
 ```
 scorecraft/
 ├── SKILL.md                     # 技能说明：工作流、10 条硬规矩、验收判读、故障表
+├── docs/                        # README 用的预览图与跳跃动图
 ├── scripts/
 │   ├── new_project.py           # 开工作目录
 │   ├── align.py                 # 音频对拍（chroma + 音高一致率）
