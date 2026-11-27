@@ -20,10 +20,16 @@
 把整个目录放到用户级技能目录：
 
 ```bash
-git clone <this-repo> ~/.workbuddy/skills/scorecraft
+git clone https://github.com/Cristiamo-7/scorecraft.git ~/.workbuddy/skills/scorecraft
 ```
 
 或直接复制目录到 `~/.workbuddy/skills/scorecraft`。之后在对话里说「做一份动态谱」即可触发。
+
+已安装过的话，更新用：
+
+```bash
+cd ~/.workbuddy/skills/scorecraft && git pull
+```
 
 ## 快速开始
 
