@@ -1,541 +1,91 @@
 {
   "meta": {
-    "title": "西风的话",
-    "lyricist": "廖辅叔",
-    "composer": "黄自",
-    "key": "G",
-    "keyLabel": "1=G",
-    "timeSig": [
-      4,
-      4
-    ],
-    "tempo": 83.03,
-    "tempoText": "行板  深情地",
-    "audio": "范唱：西风的话.mp3",
-    "audioOffset": 11.923,
-    "introBeats": 16,
-    "offsetVersion": 2,
+    "title": "小雨点跳舞",
+    "key": "C",
+    "keyLabel": "1=C",
+    "timeSig": [4, 4],
+    "tempo": 96,
+    "tempoText": "小快板  轻巧地",
+    "audio": "范唱.mp3",
+    "audioOffset": 0,
+    "introBeats": 8,
+    "offsetVersion": 1,
     "mode": "sing",
-    "background": "bg-autumn.jpg",
+    "background": "",
     "skin": "bubble",
     "palette": "soft"
   },
   "notes": [
-    {
-      "degree": 5,
-      "octave": -1,
-      "startBeat": 0,
-      "durBeats": 1,
-      "lyric": "去"
-    },
-    {
-      "degree": 5,
-      "octave": -1,
-      "startBeat": 1,
-      "durBeats": 1,
-      "lyric": "年"
-    },
-    {
-      "degree": 5,
-      "octave": -1,
-      "startBeat": 2,
-      "durBeats": 0.5,
-      "lyric": "我"
-    },
-    {
-      "degree": 1,
-      "octave": 0,
-      "startBeat": 2.5,
-      "durBeats": 0.5
-    },
-    {
-      "degree": 3,
-      "octave": 0,
-      "startBeat": 3,
-      "durBeats": 0.5
-    },
-    {
-      "degree": 5,
-      "octave": 0,
-      "startBeat": 3.5,
-      "durBeats": 0.5
-    },
-    {
-      "degree": 5,
-      "octave": 0,
-      "startBeat": 4,
-      "durBeats": 2,
-      "lyric": "回"
-    },
-    {
-      "degree": 4,
-      "octave": 0,
-      "startBeat": 6,
-      "durBeats": 2,
-      "lyric": "去"
-    },
-    {
-      "degree": 3,
-      "octave": 0,
-      "startBeat": 8,
-      "durBeats": 1,
-      "lyric": "你"
-    },
-    {
-      "degree": 3,
-      "octave": 0,
-      "startBeat": 9,
-      "durBeats": 1,
-      "lyric": "们"
-    },
-    {
-      "degree": 3,
-      "octave": 0,
-      "startBeat": 10,
-      "durBeats": 0.5,
-      "lyric": "刚"
-    },
-    {
-      "degree": 2,
-      "octave": 0,
-      "startBeat": 10.5,
-      "durBeats": 0.5,
-      "lyric": "穿"
-    },
-    {
-      "degree": 1,
-      "octave": 0,
-      "startBeat": 11,
-      "durBeats": 0.5,
-      "lyric": "新"
-    },
-    {
-      "degree": 7,
-      "octave": -1,
-      "startBeat": 11.5,
-      "durBeats": 0.5,
-      "lyric": "棉"
-    },
-    {
-      "degree": 6,
-      "octave": -1,
-      "startBeat": 12,
-      "durBeats": 3,
-      "lyric": "袍"
-    },
-    {
-      "degree": 0,
-      "octave": 0,
-      "startBeat": 15,
-      "durBeats": 1
-    },
-    {
-      "degree": 6,
-      "octave": -1,
-      "startBeat": 16,
-      "durBeats": 1,
-      "lyric": "今"
-    },
-    {
-      "degree": 6,
-      "octave": -1,
-      "startBeat": 17,
-      "durBeats": 1,
-      "lyric": "年"
-    },
-    {
-      "degree": 6,
-      "octave": -1,
-      "startBeat": 18,
-      "durBeats": 0.5,
-      "lyric": "我"
-    },
-    {
-      "degree": 7,
-      "octave": -1,
-      "startBeat": 18.5,
-      "durBeats": 0.5
-    },
-    {
-      "degree": 1,
-      "octave": 0,
-      "startBeat": 19,
-      "durBeats": 0.5,
-      "lyric": "来"
-    },
-    {
-      "degree": 2,
-      "octave": 0,
-      "startBeat": 19.5,
-      "durBeats": 0.5,
-      "lyric": "看"
-    },
-    {
-      "degree": 2,
-      "octave": 0,
-      "startBeat": 20,
-      "durBeats": 2,
-      "lyric": "你"
-    },
-    {
-      "degree": 5,
-      "octave": -1,
-      "startBeat": 22,
-      "durBeats": 2,
-      "lyric": "们"
-    },
-    {
-      "degree": 5,
-      "octave": -1,
-      "startBeat": 24,
-      "durBeats": 1,
-      "lyric": "你"
-    },
-    {
-      "degree": 5,
-      "octave": -1,
-      "startBeat": 25,
-      "durBeats": 1,
-      "lyric": "们"
-    },
-    {
-      "degree": 6,
-      "octave": -1,
-      "startBeat": 26,
-      "durBeats": 0.5,
-      "lyric": "变"
-    },
-    {
-      "degree": 7,
-      "octave": -1,
-      "startBeat": 26.5,
-      "durBeats": 0.5,
-      "lyric": "胖"
-    },
-    {
-      "degree": 1,
-      "octave": 0,
-      "startBeat": 27,
-      "durBeats": 0.5,
-      "lyric": "又"
-    },
-    {
-      "degree": 2,
-      "octave": 0,
-      "startBeat": 27.5,
-      "durBeats": 0.5,
-      "lyric": "变"
-    },
-    {
-      "degree": 3,
-      "octave": 0,
-      "startBeat": 28,
-      "durBeats": 3,
-      "lyric": "高"
-    },
-    {
-      "degree": 0,
-      "octave": 0,
-      "startBeat": 31,
-      "durBeats": 1
-    },
-    {
-      "degree": 5,
-      "octave": 0,
-      "startBeat": 32,
-      "durBeats": 1,
-      "lyric": "你"
-    },
-    {
-      "degree": 5,
-      "octave": 0,
-      "startBeat": 33,
-      "durBeats": 1,
-      "lyric": "们"
-    },
-    {
-      "degree": 6,
-      "octave": 0,
-      "startBeat": 34,
-      "durBeats": 0.5,
-      "lyric": "可"
-    },
-    {
-      "degree": 5,
-      "octave": 0,
-      "startBeat": 34.5,
-      "durBeats": 0.5
-    },
-    {
-      "degree": 4,
-      "octave": 0,
-      "startBeat": 35,
-      "durBeats": 0.5
-    },
-    {
-      "degree": 3,
-      "octave": 0,
-      "startBeat": 35.5,
-      "durBeats": 0.5
-    },
-    {
-      "degree": 3,
-      "octave": 0,
-      "startBeat": 36,
-      "durBeats": 2,
-      "lyric": "记"
-    },
-    {
-      "degree": 6,
-      "octave": -1,
-      "startBeat": 38,
-      "durBeats": 2,
-      "lyric": "得"
-    },
-    {
-      "degree": 4,
-      "octave": 0,
-      "startBeat": 40,
-      "durBeats": 1,
-      "lyric": "池"
-    },
-    {
-      "degree": 4,
-      "octave": 0,
-      "startBeat": 41,
-      "durBeats": 1,
-      "lyric": "里"
-    },
-    {
-      "degree": 3,
-      "octave": 0,
-      "startBeat": 42,
-      "durBeats": 0.5,
-      "lyric": "荷"
-    },
-    {
-      "degree": 2,
-      "octave": 0,
-      "startBeat": 42.5,
-      "durBeats": 0.5,
-      "lyric": "花"
-    },
-    {
-      "degree": 3,
-      "octave": 0,
-      "startBeat": 43,
-      "durBeats": 0.5,
-      "lyric": "变"
-    },
-    {
-      "degree": 5,
-      "octave": 0,
-      "startBeat": 43.5,
-      "durBeats": 0.5,
-      "lyric": "莲"
-    },
-    {
-      "degree": 2,
-      "octave": 0,
-      "startBeat": 44,
-      "durBeats": 3,
-      "lyric": "蓬"
-    },
-    {
-      "degree": 0,
-      "octave": 0,
-      "startBeat": 47,
-      "durBeats": 1
-    },
-    {
-      "degree": 1,
-      "octave": 0,
-      "startBeat": 48,
-      "durBeats": 1,
-      "lyric": "花"
-    },
-    {
-      "degree": 1,
-      "octave": 0,
-      "startBeat": 49,
-      "durBeats": 1,
-      "lyric": "少"
-    },
-    {
-      "degree": 1,
-      "octave": 0,
-      "startBeat": 50,
-      "durBeats": 0.5,
-      "lyric": "不"
-    },
-    {
-      "degree": 7,
-      "octave": -1,
-      "startBeat": 50.5,
-      "durBeats": 0.5,
-      "lyric": "愁"
-    },
-    {
-      "degree": 6,
-      "octave": -1,
-      "startBeat": 51,
-      "durBeats": 0.5,
-      "lyric": "没"
-    },
-    {
-      "degree": 5,
-      "octave": -1,
-      "startBeat": 51.5,
-      "durBeats": 0.5
-    },
-    {
-      "degree": 5,
-      "octave": 0,
-      "startBeat": 52,
-      "durBeats": 2,
-      "lyric": "颜"
-    },
-    {
-      "degree": 4,
-      "octave": 0,
-      "startBeat": 54,
-      "durBeats": 2,
-      "lyric": "色"
-    },
-    {
-      "degree": 5,
-      "octave": -1,
-      "startBeat": 56,
-      "durBeats": 1,
-      "lyric": "我"
-    },
-    {
-      "degree": 5,
-      "octave": -1,
-      "startBeat": 57,
-      "durBeats": 1,
-      "lyric": "把"
-    },
-    {
-      "degree": 5,
-      "octave": -1,
-      "startBeat": 58,
-      "durBeats": 0.5,
-      "lyric": "树"
-    },
-    {
-      "degree": 4,
-      "octave": 0,
-      "startBeat": 58.5,
-      "durBeats": 0.5,
-      "lyric": "叶"
-    },
-    {
-      "degree": 3,
-      "octave": 0,
-      "startBeat": 59,
-      "durBeats": 0.5,
-      "lyric": "都"
-    },
-    {
-      "degree": 2,
-      "octave": 0,
-      "startBeat": 59.5,
-      "durBeats": 0.5,
-      "lyric": "染"
-    },
-    {
-      "degree": 1,
-      "octave": 0,
-      "startBeat": 60,
-      "durBeats": 3,
-      "lyric": "红"
-    },
-    {
-      "degree": 0,
-      "octave": 0,
-      "startBeat": 63,
-      "durBeats": 1
-    }
+    { "degree": 5, "octave": -1, "startBeat": 0, "durBeats": 1, "lyric": "小" },
+    { "degree": 5, "octave": -1, "startBeat": 1, "durBeats": 1, "lyric": "雨" },
+    { "degree": 3, "octave": 0, "startBeat": 2, "durBeats": 1, "lyric": "点" },
+    { "degree": 5, "octave": 0, "startBeat": 3, "durBeats": 1, "lyric": "呀" },
+    { "degree": 6, "octave": 0, "startBeat": 4, "durBeats": 0.5, "lyric": "沙" },
+    { "degree": 5, "octave": 0, "startBeat": 4.5, "durBeats": 0.5, "lyric": "沙" },
+    { "degree": 3, "octave": 0, "startBeat": 5, "durBeats": 0.5, "lyric": "沙" },
+    { "degree": 5, "octave": 0, "startBeat": 5.5, "durBeats": 0.5 },
+    { "degree": 6, "octave": 0, "startBeat": 6, "durBeats": 2 },
+    { "degree": 5, "octave": 0, "startBeat": 8, "durBeats": 1, "lyric": "落" },
+    { "degree": 3, "octave": 0, "startBeat": 9, "durBeats": 1, "lyric": "下" },
+    { "degree": 5, "octave": 0, "startBeat": 10, "durBeats": 1, "lyric": "来" },
+    { "degree": 3, "octave": 0, "startBeat": 11, "durBeats": 1 },
+    { "degree": 0, "octave": 0, "startBeat": 12, "durBeats": 4 },
+
+    { "degree": 3, "octave": 0, "startBeat": 16, "durBeats": 1, "lyric": "花" },
+    { "degree": 5, "octave": 0, "startBeat": 17, "durBeats": 1, "lyric": "儿" },
+    { "degree": 6, "octave": 0, "startBeat": 18, "durBeats": 1, "lyric": "张" },
+    { "degree": 5, "octave": 0, "startBeat": 19, "durBeats": 1, "lyric": "开" },
+    { "degree": 3, "octave": 0, "startBeat": 20, "durBeats": 0.5, "lyric": "小" },
+    { "degree": 5, "octave": 0, "startBeat": 20.5, "durBeats": 0.5, "lyric": "嘴" },
+    { "degree": 6, "octave": 0, "startBeat": 21, "durBeats": 1, "lyric": "巴" },
+    { "degree": 5, "octave": 0, "startBeat": 22, "durBeats": 2, "lyric": "呀" },
+    { "degree": 3, "octave": 0, "startBeat": 24, "durBeats": 1, "lyric": "喝" },
+    { "degree": 5, "octave": 0, "startBeat": 25, "durBeats": 1, "lyric": "个" },
+    { "degree": 3, "octave": 0, "startBeat": 26, "durBeats": 2, "lyric": "饱" },
+    { "degree": 0, "octave": 0, "startBeat": 28, "durBeats": 4 },
+
+    { "degree": 6, "octave": 0, "startBeat": 32, "durBeats": 1, "lyric": "滴" },
+    { "degree": 5, "octave": 0, "startBeat": 33, "durBeats": 1, "lyric": "答" },
+    { "degree": 6, "octave": 0, "startBeat": 34, "durBeats": 0.5, "lyric": "滴" },
+    { "degree": 5, "octave": 0, "startBeat": 34.5, "durBeats": 0.5, "lyric": "答" },
+    { "degree": 3, "octave": 0, "startBeat": 35, "durBeats": 1, "lyric": "唱" },
+    { "degree": 5, "octave": 0, "startBeat": 36, "durBeats": 1, "lyric": "歌" },
+    { "degree": 6, "octave": 0, "startBeat": 37, "durBeats": 1, "lyric": "谣" },
+    { "degree": 5, "octave": 0, "startBeat": 38, "durBeats": 2 },
+    { "degree": 3, "octave": 0, "startBeat": 40, "durBeats": 1, "lyric": "一" },
+    { "degree": 5, "octave": 0, "startBeat": 41, "durBeats": 1, "lyric": "声" },
+    { "degree": 6, "octave": 0, "startBeat": 42, "durBeats": 1, "lyric": "一" },
+    { "degree": 5, "octave": 0, "startBeat": 43, "durBeats": 1, "lyric": "声" },
+    { "degree": 3, "octave": 0, "startBeat": 44, "durBeats": 4 },
+
+    { "degree": 5, "octave": 0, "startBeat": 48, "durBeats": 1, "lyric": "春" },
+    { "degree": 6, "octave": 0, "startBeat": 49, "durBeats": 1, "lyric": "天" },
+    { "degree": 5, "octave": 0, "startBeat": 50, "durBeats": 1, "lyric": "的" },
+    { "degree": 3, "octave": 0, "startBeat": 51, "durBeats": 1, "lyric": "脚" },
+    { "degree": 5, "octave": 0, "startBeat": 52, "durBeats": 1, "lyric": "步" },
+    { "degree": 3, "octave": 0, "startBeat": 53, "durBeats": 1, "lyric": "轻" },
+    { "degree": 5, "octave": 0, "startBeat": 54, "durBeats": 1, "lyric": "轻" },
+    { "degree": 6, "octave": 0, "startBeat": 55, "durBeats": 1, "lyric": "走" },
+    { "degree": 5, "octave": 0, "startBeat": 56, "durBeats": 1, "lyric": "来" },
+    { "degree": 3, "octave": 0, "startBeat": 57, "durBeats": 1, "lyric": "呀" },
+    { "degree": 2, "octave": 0, "startBeat": 58, "durBeats": 2 },
+    { "degree": 1, "octave": 0, "startBeat": 60, "durBeats": 4 }
   ],
   "slurs": [
-    {
-      "startBeat": 2,
-      "endBeat": 4,
-      "kind": "melisma"
-    },
-    {
-      "startBeat": 18,
-      "endBeat": 19,
-      "kind": "melisma"
-    },
-    {
-      "startBeat": 34,
-      "endBeat": 36,
-      "kind": "melisma"
-    },
-    {
-      "startBeat": 51,
-      "endBeat": 52,
-      "kind": "melisma"
-    },
-    {
-      "startBeat": 4,
-      "endBeat": 8,
-      "kind": "phrase"
-    },
-    {
-      "startBeat": 40,
-      "endBeat": 44,
-      "kind": "phrase"
-    }
+    { "startBeat": 10, "endBeat": 12, "kind": "melisma" },
+    { "startBeat": 37, "endBeat": 40, "kind": "melisma" },
+    { "startBeat": 57, "endBeat": 61, "kind": "melisma" }
   ],
   "dynamics": [
-    {
-      "beat": 0,
-      "text": "mp",
-      "kind": "dyn"
-    },
-    {
-      "beat": 16,
-      "text": "p",
-      "kind": "dyn"
-    },
-    {
-      "beat": 32,
-      "text": "f",
-      "kind": "dyn"
-    },
-    {
-      "beat": 56,
-      "text": "渐慢",
-      "kind": "tempo"
-    }
+    { "beat": 0, "text": "mp", "kind": "dyn" },
+    { "beat": 16, "text": "p", "kind": "dyn" },
+    { "beat": 32, "text": "f", "kind": "dyn" },
+    { "beat": 60, "text": "渐慢", "kind": "tempo" }
   ],
   "sections": [
-    {
-      "label": "第一句",
-      "startBeat": 0,
-      "endBeat": 16,
-      "text": "去年我回去，你们刚穿新棉袍"
-    },
-    {
-      "label": "第二句",
-      "startBeat": 16,
-      "endBeat": 32,
-      "text": "今年我来看你们，你们变胖又变高"
-    },
-    {
-      "label": "第三句",
-      "startBeat": 32,
-      "endBeat": 48,
-      "text": "你们可记得，池里荷花变莲蓬"
-    },
-    {
-      "label": "第四句",
-      "startBeat": 48,
-      "endBeat": 64,
-      "text": "花少不愁没颜色，我把树叶都染红"
-    }
+    { "label": "第一句", "startBeat": 0, "endBeat": 16, "text": "小雨点呀，沙沙沙落下来" },
+    { "label": "第二句", "startBeat": 16, "endBeat": 32, "text": "花儿张开小嘴巴，喝个饱" },
+    { "label": "第三句", "startBeat": 32, "endBeat": 48, "text": "滴答滴答唱歌谣，一声一声" },
+    { "label": "第四句", "startBeat": 48, "endBeat": 64, "text": "春天的脚步，轻轻走来呀" }
   ]
 }

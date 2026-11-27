@@ -121,7 +121,7 @@ python3 ~/.workbuddy/skills/scorecraft/scripts/check_layout.py index.html
 | `scripts/check_layout.py` | 无头浏览器版面体检：压盖/越界/精灵出界/JS 报错 |
 | `assets/template/score.template.html` | 页面模板（唯一的样式与引擎来源） |
 | `assets/fonts/` | 站酷快乐体 + Baloo 2（SIL OFL 1.1），切子集用 |
-| `assets/example/score.json` | 完整真实谱例（《西风的话》，64 音/4 句），录谱卡住时对着抄 |
+| `assets/example/score.json` | 自编示例谱例《小雨点跳舞》（51 音/4 句，含休止、低八度、一字多音），录谱卡住时对着抄 |
 | `references/schema.md` | `score.json` 字段速查 |
 | `references/design-spec.md` | 视觉与动效规范：全部尺寸常量、动画物理参数、改尺寸的三处联动 |
 | `references/user-guide-example.md` | 交付给老师的说明文样例 |

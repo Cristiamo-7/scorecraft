@@ -70,7 +70,7 @@ scorecraft/
 ├── assets/
 │   ├── template/score.template.html   # 页面模板：唯一样式与引擎来源
 │   ├── fonts/                   # 站酷快乐体 + Baloo 2 + OFL 授权
-│   └── example/score.json       # 完整真实谱例（64 音 / 4 句）
+│   └── example/score.json       # 自编示例谱例（51 音 / 4 句）
 └── references/
     ├── schema.md                # score.json 字段速查
     ├── design-spec.md           # 尺寸常量、动画物理参数、改尺寸的三处联动
@@ -104,4 +104,4 @@ python3 scripts/check_layout.py index.html
 ## 说明
 
 - `assets/fonts/` 内字体遵循 **SIL Open Font License 1.1**，见 `assets/fonts/OFL.txt`。
-- `assets/example/score.json` 与 `references/user-guide-example.md` 是课堂实践产物，仅作录谱参考，相关词曲著作权归原作者。
+- `assets/example/score.json`（《小雨点跳舞》）与 `references/user-guide-example.md` 是为演示格式**自编的示例**，词曲与文档均可自由改写、分发。

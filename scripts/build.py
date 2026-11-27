@@ -101,9 +101,17 @@ def main():
     m = validate(d)
 
     tpl = open(TPL, encoding='utf-8').read()
-    for ph in ('__SCORE_JSON__', '__TITLE__', '__AUDIO__'):
+    for ph in ('__SCORE_JSON__', '__TITLE__', '__SUB__', '__AUDIO__'):
         if ph not in tpl:
             die('模板缺少占位符 %s' % ph)
+
+    # 副标题：词曲作者 + 用途，缺作者时只留用途
+    who = []
+    if m.get('lyricist'):
+        who.append('%s 词' % m['lyricist'])
+    if m.get('composer'):
+        who.append('%s 曲' % m['composer'])
+    sub = (' · '.join(who) + ' &nbsp;|&nbsp; ' if who else '') + '课堂跟唱 · 演唱动态谱'
 
     audio = m.get('audio', '')
 
@@ -130,6 +138,7 @@ def main():
 
     out = (tpl
            .replace('__TITLE__', html.escape(m['title']))
+           .replace('__SUB__', sub)
            .replace('__AUDIO__', html.escape(audio_src, quote=True))
            .replace('/*__SCORE_JSON__*/ null', js))
 
@@ -147,9 +156,17 @@ def main():
                 print('  ! 音频比谱面短 %.1fs，末尾会被截断' % (end - dur))
 
     kb = len(out.encode('utf-8')) / 1024
-    print('✓ 已生成 %s（%.1f MB%s）'
-          % (OUT, kb / 1024,
-             '，底图+音频已内嵌，单个文件拷到任何电脑双击即可离线播放' if inline else '，底图/音频仍为外链'))
+    if not inline:
+        note = '，底图/音频仍为外链'
+    else:
+        got = []
+        if str(m.get('background', '')).startswith('data:'):
+            got.append('底图')
+        if audio_src.startswith('data:'):
+            got.append('音频')
+        note = ('，%s已内嵌，单个文件拷到任何电脑双击即可离线播放' % '+'.join(got)) if got \
+            else '，未内嵌底图/音频（文件缺失）'
+    print('✓ 已生成 %s（%.1f MB%s）' % (OUT, kb / 1024, note))
 
 
 if __name__ == '__main__':
