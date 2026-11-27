@@ -21,7 +21,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SKILL = os.path.dirname(HERE)
 TPL = os.path.join(SKILL, 'assets', 'template', 'score.template.html')
 FONTS = os.path.join(SKILL, 'assets', 'fonts')
-SCRIPTS = ['build.py', 'align.py', 'make_font.py']
+SCRIPTS = ['build.py', 'align.py', 'make_font.py', 'make_silence.py']
 
 
 def die(msg):
@@ -101,6 +101,7 @@ def main():
     print('\n目录就绪：%s' % dst)
     print('下一步：')
     print('  1) cp 范唱.mp3 .        # 音频放进目录，文件名与 meta.audio 一致')
+    print('     没有录音时：python3 make_silence.py --score score.json  # 先造静音轨预览')
     print('  2) 编辑 score.json      # 逐音写 notes（degree/octave/startBeat/durBeats/lyric）')
     print('  3) python3 align.py --write   # 自动测速度与起唱，写回 meta')
     print('  4) python3 make_font.py       # 重切字库（歌词换了就要跑）')

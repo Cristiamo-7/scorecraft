@@ -21,24 +21,29 @@ jobs:
       - name: 装依赖（切字库要 fonttools + brotli）
         run: pip install --disable-pip-version-check fonttools brotli
 
-      - name: 确认无头浏览器与 ffmpeg
+      - name: 确认无头浏览器
         run: |
-          google-chrome --version || google-chrome-stable --version || {
-            echo "::error::runner 上没有 Chrome，check_layout.py 无法运行"; exit 1; }
-          ffmpeg -version | head -1
+          if command -v google-chrome >/dev/null 2>&1; then
+            google-chrome --version
+          elif command -v google-chrome-stable >/dev/null 2>&1; then
+            google-chrome-stable --version
+          else
+            echo "::error::runner 上没有 Chrome，check_layout.py 无法运行"
+            exit 1
+          fi
 
       # 1) skill 本身是否完整：文件齐全、占位符没丢、示例谱例字段合法、脚本能编译
       - name: 技能自检
         run: python3 scripts/check_skill.py
 
-      # 2) 走一遍真实流程：建工程 → 切字库 → 打包 → 版面体检
+      # 2) 走一遍真实流程：建工程 → 造静音轨 → 切字库 → 打包 → 版面体检
       - name: 用示例谱例搭一个工程
         run: |
           python3 scripts/new_project.py "$RUNNER_TEMP/demo" --title "小雨点跳舞"
           cp assets/example/score.json "$RUNNER_TEMP/demo/score.json"
-          # 造一段静音音轨：没有真实音频时页面会退回虚拟时钟，体检就失去意义
-          ffmpeg -hide_banner -loglevel error -f lavfi -i anullsrc=r=44100:cl=mono \
-                 -t 90 -q:a 9 "$RUNNER_TEMP/demo/范唱.mp3"
+          cd "$RUNNER_TEMP/demo"
+          # 没有可解码的音频时页面会退回虚拟时钟，注入的时间就不生效，体检也就失去意义
+          python3 make_silence.py --score score.json --seconds 90
 
       - name: 切字库 + 打包单文件
         working-directory: ${{ runner.temp }}/demo

@@ -128,6 +128,7 @@ python3 ~/.workbuddy/skills/scorecraft/scripts/check_skill.py
 | `scripts/build.py` | 打包单文件 HTML（默认内嵌底图+音频） |
 | `scripts/check_layout.py` | 无头浏览器版面体检：压盖/越界/精灵出界/JS 报错 |
 | `scripts/check_skill.py` | 技能自检：文件齐全、SKILL.md frontmatter、模板占位符、示例谱例合法、脚本可编译 |
+| `scripts/make_silence.py` | 造静音音轨：范唱还没录时先出谱面做预览/体检（`--score score.json` 会把 meta.audio 指过去） |
 | `assets/template/score.template.html` | 页面模板（唯一的样式与引擎来源） |
 | `assets/fonts/` | 站酷快乐体 + Baloo 2（SIL OFL 1.1），切子集用 |
 | `assets/example/score.json` | 自编示例谱例《小雨点跳舞》（51 音/4 句，含休止、低八度、一字多音），录谱卡住时对着抄 |

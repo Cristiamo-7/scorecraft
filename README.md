@@ -74,7 +74,8 @@ scorecraft/
 │   ├── make_font.py             # 按用字切字体子集并 base64 内嵌
 │   ├── build.py                 # 打包单文件 HTML（默认内嵌底图+音频，--link 出外链版）
 │   ├── check_layout.py          # 无头浏览器版面体检，退出码 0/1
-│   └── check_skill.py           # 技能自检：文件齐全/占位符/示例谱例/脚本可编译
+│   ├── check_skill.py           # 技能自检：文件齐全/占位符/示例谱例/脚本可编译
+│   └── make_silence.py          # 造静音音轨，没有范唱时也能预览/体检
 ├── assets/
 │   ├── template/score.template.html   # 页面模板：唯一样式与引擎来源
 │   ├── fonts/                   # 站酷快乐体 + Baloo 2 + OFL 授权
@@ -111,7 +112,7 @@ python3 scripts/check_layout.py index.html
 
 ## 持续集成
 
-`.github/workflows/validate.yml` 在每次 push / PR 时跑一遍完整链路：`check_skill.py` → 用示例谱例 `new_project.py` 搭目录 → `make_font.py` → `build.py` → `check_layout.py`，并把生成的 `index.html` 作为 artifact 留档（可以下载下来直接看效果）。CI 里会用 `ffmpeg` 造一段 90 秒静音音轨——没有真实音频时页面会退回虚拟时钟，体检就失去意义。
+`.github/workflows/validate.yml` 在每次 push / PR 时跑一遍完整链路：`check_skill.py` → 用示例谱例 `new_project.py` 搭目录 → `make_font.py` → `build.py` → `check_layout.py`，并把生成的 `index.html` 作为 artifact 留档（可以下载下来直接看效果）。CI 里用 `make_silence.py` 造一段 90 秒静音音轨（纯标准库，不依赖 ffmpeg）——没有可解码的音频时页面会退回虚拟时钟，注入的时间就不生效，体检会变成假绿。
 
 ## 硬规矩（摘）
 

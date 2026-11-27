@@ -34,6 +34,8 @@ REQUIRED = [
     'scripts/make_font.py',
     'scripts/build.py',
     'scripts/check_layout.py',
+    'scripts/check_skill.py',
+    'scripts/make_silence.py',
 ]
 
 # 模板必须保留的占位符（少一个就会把上一首歌的标题/音频带进新谱）
