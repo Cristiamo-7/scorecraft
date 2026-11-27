@@ -4,7 +4,7 @@
 
 给音乐老师用：谱面随范唱滚动，一个金色音符踩着拍点从一个音块跳到下一个音块，块下逐字歌词，底部简谱同步标红。
 
-![style](https://img.shields.io/badge/format-single--file%20HTML-informational) ![offline](https://img.shields.io/badge/offline-yes-success) ![fonts](https://img.shields.io/badge/fonts-SIL%20OFL%201.1-blue)
+![style](https://img.shields.io/badge/format-single--file%20HTML-informational) ![offline](https://img.shields.io/badge/offline-yes-success) ![fonts](https://img.shields.io/badge/fonts-SIL%20OFL%201.1-blue) ![license](https://img.shields.io/badge/license-MIT-green) [![validate](https://github.com/Cristiamo-7/scorecraft/actions/workflows/validate.yml/badge.svg)](https://github.com/Cristiamo-7/scorecraft/actions/workflows/validate.yml)
 
 ![动态谱预览](docs/preview.png)
 
@@ -65,13 +65,16 @@ python3 ~/.workbuddy/skills/scorecraft/scripts/check_layout.py index.html
 ```
 scorecraft/
 ├── SKILL.md                     # 技能说明：工作流、10 条硬规矩、验收判读、故障表
+├── LICENSE                      # MIT（字体除外，见文末）
 ├── docs/                        # README 用的预览图与跳跃动图
+├── .github/workflows/validate.yml  # CI：自检 + 打包示例 + 版面体检
 ├── scripts/
 │   ├── new_project.py           # 开工作目录
 │   ├── align.py                 # 音频对拍（chroma + 音高一致率）
 │   ├── make_font.py             # 按用字切字体子集并 base64 内嵌
 │   ├── build.py                 # 打包单文件 HTML（默认内嵌底图+音频，--link 出外链版）
-│   └── check_layout.py          # 无头浏览器版面体检，退出码 0/1
+│   ├── check_layout.py          # 无头浏览器版面体检，退出码 0/1
+│   └── check_skill.py           # 技能自检：文件齐全/占位符/示例谱例/脚本可编译
 ├── assets/
 │   ├── template/score.template.html   # 页面模板：唯一样式与引擎来源
 │   ├── fonts/                   # 站酷快乐体 + Baloo 2 + OFL 授权
@@ -82,7 +85,17 @@ scorecraft/
     └── user-guide-example.md    # 交付给老师的说明文样例
 ```
 
-## 体检脚本在查什么
+## 两个自检脚本
+
+**技能自检**（改完 skill 本体先跑这个）：
+
+```bash
+python3 scripts/check_skill.py
+```
+
+查文件是否齐全（模板 / 字体 / OFL / 示例谱例 / 文档）、`SKILL.md` frontmatter 是否完整、模板四个占位符有没有丢、模板里有没有残留硬编码曲名、示例谱例字段是否合法且无重叠、脚本能否编译、文本是否 UTF-8。退出码 0/1。
+
+**版面体检**（每次生成谱面都要跑）：
 
 ```bash
 python3 scripts/check_layout.py index.html
@@ -96,6 +109,10 @@ python3 scripts/check_layout.py index.html
 
 全绿才交付。故意把字号撑爆时它会准确报出越界位置，退出码 1。
 
+## 持续集成
+
+`.github/workflows/validate.yml` 在每次 push / PR 时跑一遍完整链路：`check_skill.py` → 用示例谱例 `new_project.py` 搭目录 → `make_font.py` → `build.py` → `check_layout.py`，并把生成的 `index.html` 作为 artifact 留档（可以下载下来直接看效果）。CI 里会用 `ffmpeg` 造一段 90 秒静音音轨——没有真实音频时页面会退回虚拟时钟，体检就失去意义。
+
 ## 硬规矩（摘）
 
 1. 音频 `currentTime` 是唯一时钟，动画只读它
@@ -106,7 +123,10 @@ python3 scripts/check_layout.py index.html
 6. 尺寸按「后排看得清」定，动完必须重跑体检
 7. 交付必须单文件离线（字体、底图、音频全部内嵌）
 
-## 说明
+## 许可证
 
-- `assets/fonts/` 内字体遵循 **SIL Open Font License 1.1**，见 `assets/fonts/OFL.txt`。
-- `assets/example/score.json`（《小雨点跳舞》）与 `references/user-guide-example.md` 是为演示格式**自编的示例**，词曲与文档均可自由改写、分发。
+- **代码与文档**：MIT，见 `LICENSE`。可商用、可改造、可再分发，保留版权声明即可。
+- **字体**：`assets/fonts/` 内站酷快乐体与 Baloo 2 遵循 **SIL Open Font License 1.1**，见 `assets/fonts/OFL.txt`。用它们生成的页面内嵌了字体子集，同样受 OFL 约束（可自由使用、修改、分发，但字体本身不得单独售卖）。
+- **示例内容**：`assets/example/score.json`（《小雨点跳舞》）与 `references/user-guide-example.md` 是为演示格式**自编的示例**，词曲与文档均可自由改写、分发。
+
+> 用它做教材歌曲时，词曲著作权仍归原作者——做好的动态谱自己上课用没问题，公开分发请先确认授权。

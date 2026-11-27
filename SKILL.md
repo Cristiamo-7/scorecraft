@@ -95,6 +95,14 @@ python3 ~/.workbuddy/skills/scorecraft/scripts/check_layout.py index.html
 
 必须全绿（判读见下节）。再手工确认两件事：把 `index.html` 单独拷到空目录双击，**底图在、能出声、能拖动**；缩放窗口看页头胶囊与底栏按钮有没有挤爆（底栏 1280 宽已用到 1236px，别再放大按钮）。
 
+如果这次动的是 **skill 本体**（模板常量、脚本、示例谱例），先跑一次自检再收工：
+
+```bash
+python3 ~/.workbuddy/skills/scorecraft/scripts/check_skill.py
+```
+
+它会拦住「模板占位符被删」「模板里又写死曲名」「示例谱例音符重叠」「脚本语法错误」这类会让整条链路失效的问题。CI（`.github/workflows/validate.yml`）每次 push 都会跑同一套。
+
 最后写一份 `使用说明.md`（可参考 `references/user-guide-example.md`）：文件说明、换歌三步、课堂用法、拷到班级电脑怎么开。
 
 ## 硬规矩
@@ -119,6 +127,7 @@ python3 ~/.workbuddy/skills/scorecraft/scripts/check_layout.py index.html
 | `scripts/make_font.py` | 按用字切字体子集并 base64 内嵌进模板 |
 | `scripts/build.py` | 打包单文件 HTML（默认内嵌底图+音频） |
 | `scripts/check_layout.py` | 无头浏览器版面体检：压盖/越界/精灵出界/JS 报错 |
+| `scripts/check_skill.py` | 技能自检：文件齐全、SKILL.md frontmatter、模板占位符、示例谱例合法、脚本可编译 |
 | `assets/template/score.template.html` | 页面模板（唯一的样式与引擎来源） |
 | `assets/fonts/` | 站酷快乐体 + Baloo 2（SIL OFL 1.1），切子集用 |
 | `assets/example/score.json` | 自编示例谱例《小雨点跳舞》（51 音/4 句，含休止、低八度、一字多音），录谱卡住时对着抄 |
