@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+
+# 生成物（不属于仓库）
+index.html
+*.bak
+
+# 本地临时
+/tmp/
+/out/
