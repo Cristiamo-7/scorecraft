@@ -1,0 +1,59 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  skill:
+    name: 结构与版面体检
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 装依赖（切字库要 fonttools + brotli）
+        run: pip install --disable-pip-version-check fonttools brotli
+
+      - name: 确认无头浏览器与 ffmpeg
+        run: |
+          google-chrome --version || google-chrome-stable --version || {
+            echo "::error::runner 上没有 Chrome，check_layout.py 无法运行"; exit 1; }
+          ffmpeg -version | head -1
+
+      # 1) skill 本身是否完整：文件齐全、占位符没丢、示例谱例字段合法、脚本能编译
+      - name: 技能自检
+        run: python3 scripts/check_skill.py
+
+      # 2) 走一遍真实流程：建工程 → 切字库 → 打包 → 版面体检
+      - name: 用示例谱例搭一个工程
+        run: |
+          python3 scripts/new_project.py "$RUNNER_TEMP/demo" --title "小雨点跳舞"
+          cp assets/example/score.json "$RUNNER_TEMP/demo/score.json"
+          # 造一段静音音轨：没有真实音频时页面会退回虚拟时钟，体检就失去意义
+          ffmpeg -hide_banner -loglevel error -f lavfi -i anullsrc=r=44100:cl=mono \
+                 -t 90 -q:a 9 "$RUNNER_TEMP/demo/范唱.mp3"
+
+      - name: 切字库 + 打包单文件
+        working-directory: ${{ runner.temp }}/demo
+        run: |
+          python3 make_font.py
+          python3 build.py
+          ls -lh index.html
+
+      - name: 版面体检
+        run: python3 scripts/check_layout.py "$RUNNER_TEMP/demo/index.html"
+
+      - name: 留档生成的谱面
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: demo-html
+          path: ${{ runner.temp }}/demo/index.html
+          if-no-files-found: warn
